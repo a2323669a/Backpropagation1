@@ -22,10 +22,10 @@ But we find the overfitting problem is more serious than we considered.
 At first, we do not use shuffle and validation.When we using test data(in kaggle),
 the accuracy is only about 83 percent,with about 90 percent accuracy in training data.
 So,we use shuffle and construct validation data.
-<font color=#ff0000>
-We use the shuffle wrong.Shuffle is random in the first dim,but we construct the
-data_x with shape(dim,n).In fact we should use the shuffle(data.T)
-</font>
+```diff
+-We use the shuffle wrong.Shuffle is random in the first dim,but we construct the data_x with shape(dim,n).
+-In fact we should use the shuffle(data.T)
+```
 <br>
 However, the result is not very well.Even if the accuracy on validation data is over
 0.9,the accuracy on test data is most near 0.85, with the epoch only about 20.
