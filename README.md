@@ -26,6 +26,11 @@ So,we use shuffle and construct validation data.
 -We use the shuffle wrong.Shuffle is random in the first dim,but we construct the data_x with shape(dim,n).
 -In fact we should use the shuffle(data.T)
 ```
+```diff
+-I use validation data in a worong way, I should not use the validation data to train
+in each eopch.i.e.in the training process,the validation data should not shuffle to
+train.
+```
 <br>
 However, the result is not very well.Even if the accuracy on validation data is over
 0.9,the accuracy on test data is most near 0.85, with the epoch only about 20.
